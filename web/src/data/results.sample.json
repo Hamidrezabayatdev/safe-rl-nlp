@@ -1,0 +1,584 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "generatedAt": "2026-01-01T00:00:00+00:00",
+    "generator": {
+      "script": "fixture",
+      "python": "3.11",
+      "scipy": "1.x",
+      "numpy": "2.x"
+    },
+    "feasibilityTolerance": 1e-06,
+    "kktTolerance": 0.01,
+    "methods": [
+      "Augmented Lagrangian",
+      "SQP (SLSQP)"
+    ],
+    "scenarioIds": [
+      "sample"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "sample",
+      "label": {
+        "en": "Sample scenario",
+        "fa": "سناریوی نمونه"
+      },
+      "description": {
+        "en": "Compact fixture used by component tests.",
+        "fa": "نمونه فشرده برای تست‌ها."
+      },
+      "problem": {
+        "T": 3,
+        "dt": 0.5,
+        "s0": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "goal": {
+          "x": 3.0,
+          "y": 3.0
+        },
+        "hazard": {
+          "cx": 1.5,
+          "cy": 1.5,
+          "R": 0.7
+        },
+        "vMax": 4.0,
+        "eMax": 20.0,
+        "aMin": -2.0,
+        "aMax": 2.0,
+        "alpha": 0.1,
+        "numVars": 6,
+        "numConstraints": 7,
+        "initialGuess": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bounds": [
+          [
+            -2.0,
+            2.0
+          ],
+          [
+            -2.0,
+            2.0
+          ],
+          [
+            -2.0,
+            2.0
+          ],
+          [
+            -2.0,
+            2.0
+          ],
+          [
+            -2.0,
+            2.0
+          ],
+          [
+            -2.0,
+            2.0
+          ]
+        ]
+      },
+      "results": [
+        {
+          "name": "Augmented Lagrangian",
+          "label": {
+            "en": "Augmented Lagrangian",
+            "fa": "لاگرانژین تقویت‌شده"
+          },
+          "family": "lagrangian",
+          "success": true,
+          "message": "converged: feasible and stationary",
+          "xStar": [
+            2.0,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "trajectory": [
+            {
+              "t": 0,
+              "x": 0.0,
+              "y": 0.0,
+              "vx": 0.0,
+              "vy": 0.0,
+              "ax": 2.0,
+              "ay": 2.0
+            },
+            {
+              "t": 1,
+              "x": 0.0,
+              "y": 0.0,
+              "vx": 1.0,
+              "vy": 1.0,
+              "ax": 0.0,
+              "ay": 0.0
+            },
+            {
+              "t": 2,
+              "x": 0.5,
+              "y": 0.5,
+              "vx": 1.0,
+              "vy": 1.0,
+              "ax": 0.0,
+              "ay": 0.0
+            },
+            {
+              "t": 3,
+              "x": 1.0,
+              "y": 1.0,
+              "vx": 1.0,
+              "vy": 1.0,
+              "ax": null,
+              "ay": null
+            }
+          ],
+          "objective": 49.3,
+          "constraintValues": [
+            -12.0,
+            -14.0,
+            -14.0,
+            -14.0,
+            -4.01,
+            -1.51,
+            -0.010000000000000064
+          ],
+          "constraintLabels": [
+            {
+              "en": "Energy budget",
+              "fa": "بودجه انرژی"
+            },
+            {
+              "en": "Speed @ t=1",
+              "fa": "سرعت در گام t=1"
+            },
+            {
+              "en": "Speed @ t=2",
+              "fa": "سرعت در گام t=2"
+            },
+            {
+              "en": "Speed @ t=3",
+              "fa": "سرعت در گام t=3"
+            },
+            {
+              "en": "Hazard @ t=1",
+              "fa": "مانع در گام t=1"
+            },
+            {
+              "en": "Hazard @ t=2",
+              "fa": "مانع در گام t=2"
+            },
+            {
+              "en": "Hazard @ t=3",
+              "fa": "مانع در گام t=3"
+            }
+          ],
+          "maxViolation": 0.0,
+          "numSatisfied": 7,
+          "numActive": 0,
+          "iterations": 2,
+          "runtimeS": 0.00184644599994499,
+          "convergence": [
+            {
+              "iter": 0,
+              "objective": 49.3,
+              "maxViolation": 0.0
+            },
+            {
+              "iter": 1,
+              "objective": 49.3,
+              "maxViolation": 0.0
+            }
+          ],
+          "multipliers": [
+            {
+              "index": 0,
+              "label": {
+                "en": "Energy budget",
+                "fa": "بودجه انرژی"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 1,
+              "label": {
+                "en": "Speed @ t=1",
+                "fa": "سرعت در گام t=1"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 2,
+              "label": {
+                "en": "Speed @ t=2",
+                "fa": "سرعت در گام t=2"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 3,
+              "label": {
+                "en": "Speed @ t=3",
+                "fa": "سرعت در گام t=3"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 4,
+              "label": {
+                "en": "Hazard @ t=1",
+                "fa": "مانع در گام t=1"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 5,
+              "label": {
+                "en": "Hazard @ t=2",
+                "fa": "مانع در گام t=2"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 6,
+              "label": {
+                "en": "Hazard @ t=3",
+                "fa": "مانع در گام t=3"
+              },
+              "value": 0.0
+            }
+          ],
+          "feasible": true,
+          "kkt": {
+            "stationarity": 0.0,
+            "primalFeasibility": 0.0,
+            "dualFeasibility": 0.0,
+            "complementarySlackness": 0.0,
+            "satisfied": true
+          }
+        },
+        {
+          "name": "SQP (SLSQP)",
+          "label": {
+            "en": "SQP (SLSQP)",
+            "fa": "SQP (روش SLSQP)"
+          },
+          "family": "sqp",
+          "success": true,
+          "message": "Optimization terminated successfully",
+          "xStar": [
+            1.99999999999999,
+            1.9999999999999893,
+            -1.7304991150879356e-06,
+            -1.7304991149214022e-06,
+            0.0,
+            0.0
+          ],
+          "trajectory": [
+            {
+              "t": 0,
+              "x": 0.0,
+              "y": 0.0,
+              "vx": 0.0,
+              "vy": 0.0,
+              "ax": 1.99999999999999,
+              "ay": 1.9999999999999893
+            },
+            {
+              "t": 1,
+              "x": 0.0,
+              "y": 0.0,
+              "vx": 0.999999999999995,
+              "vy": 0.9999999999999947,
+              "ax": -1.7304991150879356e-06,
+              "ay": -1.7304991149214022e-06
+            },
+            {
+              "t": 2,
+              "x": 0.4999999999999975,
+              "y": 0.49999999999999734,
+              "vx": 0.9999991347504374,
+              "vy": 0.9999991347504372,
+              "ax": 0.0,
+              "ay": 0.0
+            },
+            {
+              "t": 3,
+              "x": 0.9999995673752162,
+              "y": 0.999999567375216,
+              "vx": 0.9999991347504374,
+              "vy": 0.9999991347504372,
+              "ax": null,
+              "ay": null
+            }
+          ],
+          "objective": 49.30000000000062,
+          "constraintValues": [
+            -11.999999999994094,
+            -14.000000000000021,
+            -14.000003460996753,
+            -14.000003460996753,
+            -4.01,
+            -1.5100000000000102,
+            -0.010000865249942203
+          ],
+          "constraintLabels": [
+            {
+              "en": "Energy budget",
+              "fa": "بودجه انرژی"
+            },
+            {
+              "en": "Speed @ t=1",
+              "fa": "سرعت در گام t=1"
+            },
+            {
+              "en": "Speed @ t=2",
+              "fa": "سرعت در گام t=2"
+            },
+            {
+              "en": "Speed @ t=3",
+              "fa": "سرعت در گام t=3"
+            },
+            {
+              "en": "Hazard @ t=1",
+              "fa": "مانع در گام t=1"
+            },
+            {
+              "en": "Hazard @ t=2",
+              "fa": "مانع در گام t=2"
+            },
+            {
+              "en": "Hazard @ t=3",
+              "fa": "مانع در گام t=3"
+            }
+          ],
+          "maxViolation": 0.0,
+          "numSatisfied": 7,
+          "numActive": 0,
+          "iterations": 5,
+          "runtimeS": 0.002187365999816393,
+          "convergence": [
+            {
+              "iter": 0,
+              "objective": 50.502252666666664,
+              "maxViolation": 0.0
+            },
+            {
+              "iter": 1,
+              "objective": 49.31275243062018,
+              "maxViolation": 0.0
+            },
+            {
+              "iter": 2,
+              "objective": 49.3078207970343,
+              "maxViolation": 0.0
+            },
+            {
+              "iter": 3,
+              "objective": 49.30000000000062,
+              "maxViolation": 0.0
+            },
+            {
+              "iter": 4,
+              "objective": 49.30000000000062,
+              "maxViolation": 0.0
+            },
+            {
+              "iter": 5,
+              "objective": 49.30000000000062,
+              "maxViolation": 0.0
+            }
+          ],
+          "multipliers": [
+            {
+              "index": 0,
+              "label": {
+                "en": "Energy budget",
+                "fa": "بودجه انرژی"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 1,
+              "label": {
+                "en": "Speed @ t=1",
+                "fa": "سرعت در گام t=1"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 2,
+              "label": {
+                "en": "Speed @ t=2",
+                "fa": "سرعت در گام t=2"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 3,
+              "label": {
+                "en": "Speed @ t=3",
+                "fa": "سرعت در گام t=3"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 4,
+              "label": {
+                "en": "Hazard @ t=1",
+                "fa": "مانع در گام t=1"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 5,
+              "label": {
+                "en": "Hazard @ t=2",
+                "fa": "مانع در گام t=2"
+              },
+              "value": 0.0
+            },
+            {
+              "index": 6,
+              "label": {
+                "en": "Hazard @ t=3",
+                "fa": "مانع در گام t=3"
+              },
+              "value": 0.0
+            }
+          ],
+          "feasible": true,
+          "kkt": {
+            "stationarity": 3.552713678800501e-07,
+            "primalFeasibility": 0.0,
+            "dualFeasibility": 0.0,
+            "complementarySlackness": 0.0,
+            "satisfied": true
+          }
+        }
+      ],
+      "comparison": {
+        "metrics": [
+          {
+            "key": "objective",
+            "label": {
+              "en": "Objective value",
+              "fa": "مقدار تابع هدف"
+            },
+            "values": {
+              "Augmented Lagrangian": "49.3",
+              "Quadratic Penalty": "49.3",
+              "SQP (SLSQP)": "49.3"
+            },
+            "interpretation": {
+              "en": "Lower is better.",
+              "fa": "کمتر بهتر است."
+            }
+          },
+          {
+            "key": "maxViolation",
+            "label": {
+              "en": "Max constraint violation",
+              "fa": "بیشینه نقض قید"
+            },
+            "values": {
+              "Augmented Lagrangian": "0",
+              "Quadratic Penalty": "0",
+              "SQP (SLSQP)": "0"
+            },
+            "interpretation": {
+              "en": "Near zero means the safety constraints are met.",
+              "fa": "نزدیک صفر یعنی قیدهای ایمنی برقرارند."
+            }
+          },
+          {
+            "key": "runtime",
+            "label": {
+              "en": "Runtime",
+              "fa": "زمان اجرا"
+            },
+            "values": {
+              "Augmented Lagrangian": "1.8 ms",
+              "Quadratic Penalty": "1.4 ms",
+              "SQP (SLSQP)": "2.2 ms"
+            },
+            "interpretation": {
+              "en": "Lower is faster.",
+              "fa": "کمتر یعنی سریع‌تر."
+            }
+          },
+          {
+            "key": "iterations",
+            "label": {
+              "en": "Iterations",
+              "fa": "تعداد تکرار"
+            },
+            "values": {
+              "Augmented Lagrangian": "2",
+              "Quadratic Penalty": "2",
+              "SQP (SLSQP)": "5"
+            },
+            "interpretation": {
+              "en": "Fewer iterations means faster convergence.",
+              "fa": "تکرار کمتر یعنی همگرایی سریع‌تر."
+            }
+          },
+          {
+            "key": "feasible",
+            "label": {
+              "en": "Feasible?",
+              "fa": "شدنی؟"
+            },
+            "values": {
+              "Augmented Lagrangian": "Yes",
+              "Quadratic Penalty": "Yes",
+              "SQP (SLSQP)": "Yes"
+            },
+            "interpretation": {
+              "en": "Whether the final solution satisfies all constraints.",
+              "fa": "آیا جواب نهایی همه قیدها را برآورده می‌کند."
+            }
+          },
+          {
+            "key": "status",
+            "label": {
+              "en": "Solver status",
+              "fa": "وضعیت حل‌کننده"
+            },
+            "values": {
+              "Augmented Lagrangian": "success",
+              "Quadratic Penalty": "success",
+              "SQP (SLSQP)": "success"
+            },
+            "interpretation": {
+              "en": "Reported solver outcome.",
+              "fa": "نتیجه گزارش‌شده حل‌کننده."
+            }
+          }
+        ],
+        "best": {
+          "objective": "Augmented Lagrangian",
+          "feasibility": "Augmented Lagrangian",
+          "fastest": "Quadratic Penalty",
+          "fewestIterations": "Augmented Lagrangian"
+        },
+        "summary": {
+          "en": "Quadratic Penalty gave the best feasible result for this scenario (objective 49.3, max violation 0, 1.4 ms).",
+          "fa": "روش «جریمه درجه‌دوم» بهترین جواب شدنی را در این سناریو داد (هدف 49.3، بیشینه نقض 0، 1.4 میلی‌ثانیه)."
+        }
+      }
+    }
+  ]
+}

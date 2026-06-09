@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safe RL via Nonlinear Programming</title>
+    <meta
+      name="description"
+      content="Safe Reinforcement Learning as constrained Nonlinear Programming: Lagrangian/KKT vs SQP."
+    />
+    <!-- Pre-paint theme + language to avoid FOUC and a direction flash -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("srl-theme") || "light";
+          var resolved = t === "system"
+            ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+            : t;
+          if (resolved === "dark") document.documentElement.classList.add("dark");
+          var lang = localStorage.getItem("srl-lang") || "en";
+          document.documentElement.lang = lang;
+          document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Node / Vite
+node_modules/
+web/dist/
+web/.vite/
+*.local
+
+# Playwright
+web/test-results/
+web/playwright-report/
+web/.playwright/
+web/blob-report/
+
+# Editor / OS
+.DS_Store
+.idea/
+*.swp
+
+# Logs / scratch
+*.log
+
+# NOTE: web/src/data/results.json IS committed (it is a generated deliverable).

@@ -1,0 +1,149 @@
+@import "tailwindcss";
+@import "@fontsource-variable/vazirmatn";
+@import "katex/dist/katex.min.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 42%;
+  --primary: 222 60% 38%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --accent: 210 40% 94%;
+  --accent-foreground: 222 47% 11%;
+  --destructive: 0 72% 45%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 142 64% 32%;
+  --success-foreground: 0 0% 100%;
+  --warning: 35 92% 38%;
+  --warning-foreground: 0 0% 100%;
+  --border: 214 32% 88%;
+  --input: 214 32% 88%;
+  --ring: 222 60% 38%;
+
+  --chart-1: 221 83% 53%;
+  --chart-2: 27 96% 49%;
+  --chart-3: 142 71% 40%;
+  --chart-4: 340 75% 50%;
+  --chart-5: 270 65% 55%;
+
+  --radius: 0.6rem;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  --font-fa: "Vazirmatn Variable", var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.dark {
+  --background: 222 47% 7%;
+  --foreground: 210 40% 96%;
+  --card: 222 45% 10%;
+  --card-foreground: 210 40% 96%;
+  --muted: 217 33% 16%;
+  --muted-foreground: 215 20% 68%;
+  --primary: 213 90% 66%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 210 40% 96%;
+  --accent: 217 33% 20%;
+  --accent-foreground: 210 40% 96%;
+  --destructive: 0 72% 58%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 142 64% 45%;
+  --success-foreground: 222 47% 11%;
+  --warning: 38 92% 56%;
+  --warning-foreground: 222 47% 11%;
+  --border: 217 33% 22%;
+  --input: 217 33% 22%;
+  --ring: 213 90% 66%;
+
+  --chart-1: 213 90% 66%;
+  --chart-2: 32 95% 60%;
+  --chart-3: 142 65% 55%;
+  --chart-4: 340 82% 66%;
+  --chart-5: 270 75% 72%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Persian text uses Vazirmatn; math/code stay LTR + Latin */
+  :lang(fa) {
+    font-family: var(--font-fa);
+  }
+  .katex,
+  code,
+  pre,
+  .ltr-island {
+    font-family: var(--font-mono);
+  }
+  .katex {
+    direction: ltr;
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+/* Math islands always render left-to-right even inside an RTL page */
+.ltr-island {
+  direction: ltr;
+  unicode-bidi: isolate;
+}

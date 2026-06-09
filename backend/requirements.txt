@@ -1,0 +1,7 @@
+# Safe-RL NLP backend — Python 3.11
+# Install into a venv:  python3.11 -m venv .venv && . .venv/bin/activate && pip install -r backend/requirements.txt
+numpy>=1.26,<2.3
+scipy>=1.11,<1.15
+matplotlib>=3.8,<3.10   # optional: static report plots (dashboard uses Recharts, not these)
+pytest>=8.0,<9.0
+pytest-cov>=5.0
